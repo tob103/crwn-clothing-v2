@@ -4,11 +4,19 @@ import {BrowserRouter} from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {UserProvider} from "./Contexts/UserContext";
+import {ProductsProvider} from "./Contexts/ProductsContext";
+
+//When you're using Providers, you need to know which provider has access to another.
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App/>
+            <UserProvider>
+                <ProductsProvider>
+                    <App/>
+                </ProductsProvider>
+            </UserProvider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

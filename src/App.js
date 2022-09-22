@@ -4,12 +4,8 @@ import SignInForm from "./Components/SignInForm/SignInForm";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import {Route, Routes} from "react-router";
 import SignInPage from "./Components/Routes/SignIn/SignInPage";
+import Shop from "./Components/Routes/Shop/Shop";
 
-const Shop = () => {
-    return (
-        <h1> I am the Shop Component </h1>
-    )
-};
 
 const App = () => {
     return (

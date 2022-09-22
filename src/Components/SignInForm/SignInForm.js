@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import {UserContext} from "../../Contexts/UserContext";
 
 import {
     auth,
@@ -16,6 +17,8 @@ import './SignInForm.scss'
 
 const SignInForm = () => {
 
+   // console.log("hit");
+
     // useEffect( async () =>{
     //    const response = await getRedirectResult(auth);
     //    // console.log(response);
@@ -29,13 +32,15 @@ const SignInForm = () => {
         const {user} = await signInWithGooglePopup()
         // console.log(response);
         // createUserDocumentFromAuth(user);
-        const userDocRef = await createUserDocumentFromAuth(user);
+        // const userDocRef = await createUserDocumentFromAuth(user);
     };
 
     // const logGoogleRedirectUser = async () => {
     //     const {user} = await signInWithGoogleRedirect();
     //     console.log({user});
     // }
+
+
 
     const signInFieldsList = {
 
@@ -44,14 +49,24 @@ const SignInForm = () => {
 
     }
 
+    const resetSignInForms = () =>{
+
+        setSignInFields(signInFieldsList);
+    };
+
+
+    // const {setCurrentUser} = useContext(UserContext)
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log("Submitted the form!");
-        console.log(email, password);
+        // console.log(email, password);
 
         try {
-            const signedInUser = await signInUserWithEmailAndPassword(email, password)
-            console.log(signedInUser);
+            const signedInUser = await signInUserWithEmailAndPassword(email, password);
+           // console.log(signedInUser);
+           //  setCurrentUser(signedInUser);
+
 
         } catch (error) {
             switch (error.code) {
@@ -71,6 +86,9 @@ const SignInForm = () => {
 
             }
         }
+        resetSignInForms();
+
+
     }
 
 
