@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {UserProvider} from "./Contexts/UserContext";
 import {ProductsProvider} from "./Contexts/ProductsContext";
+import {CartProvider} from "./Contexts/CartContext";
 
 //When you're using Providers, you need to know which provider has access to another.
 
@@ -14,7 +15,9 @@ ReactDOM.render(
         <BrowserRouter>
             <UserProvider>
                 <ProductsProvider>
+                    <CartProvider>
                     <App/>
+                    </CartProvider>
                 </ProductsProvider>
             </UserProvider>
         </BrowserRouter>
