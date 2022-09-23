@@ -5,20 +5,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {UserProvider} from "./Contexts/UserContext";
-import {ProductsProvider} from "./Contexts/ProductsContext";
+//import {ProductsProvider} from "./Contexts/ProductsContext";
 import {CartProvider} from "./Contexts/CartContext";
-
+import {CategoriesProvider} from "./Contexts/CategoriesContext";
 //When you're using Providers, you need to know which provider has access to another.
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <UserProvider>
-                <ProductsProvider>
+                <CategoriesProvider>
                     <CartProvider>
                     <App/>
                     </CartProvider>
-                </ProductsProvider>
+                </CategoriesProvider>
             </UserProvider>
         </BrowserRouter>
     </React.StrictMode>,

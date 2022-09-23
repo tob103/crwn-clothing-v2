@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryItem from "../CategoryItem/CategoryItem";
+import DirectoryItem from "../DirectoryItem/DirectoryItem";
 import './CategoryDirectory.styles.scss'
 
 const CategoryDirectory = (props) => {
@@ -8,7 +8,7 @@ const CategoryDirectory = (props) => {
         <div className='categories-container'>
             {/* <img /> */}
             {props.categoryArray.map((category) => {
-                return <CategoryItem key={category.id} category={category}/>
+                return <DirectoryItem key={category.id} category={category}/>
             })}
         </div>
     )

@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Components/Routes/Home/Home";
-import SignInForm from "./Components/SignInForm/SignInForm";
+//This is no longer needed because this page has been refactored
+// import SignInForm from "./Components/SignInForm/SignInForm";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import {Route, Routes} from "react-router";
 import SignInPage from "./Components/Routes/SignIn/SignInPage";
@@ -13,7 +14,7 @@ const App = () => {
         <Routes>
             <Route path='/' element={<NavigationBar/>}>
                 <Route index element={<Home/>}/>
-                <Route path="shop" element={<Shop/>}/>
+                <Route path="shop/*" element={<Shop/>}/>
                 <Route path="sign-in" element={<SignInPage/>}/>
                 <Route path="checkout" element={<CheckOutPage/>} />
             </Route>
